@@ -1,0 +1,63 @@
+.jobs-section-container {
+  width: 100%;
+}
+
+.jobs-card-list {
+  padding-left: 0px;
+  list-style-type: none;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.jobs-failure-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Roboto';
+}
+
+.jobs-failure-image {
+  width: 70%;
+}
+
+.jobs-failure-heading {
+  font-size: 32px;
+  font-weight: 400;
+  margin-top: 30px;
+  margin-bottom: 8px;
+}
+
+.jobs-failure-retry-button {
+  background-color: #4f46e5;
+  color: #ffffff;
+  border: 0px;
+  border-radius: 4px;
+  padding: 10px 25px;
+  font-size: 10px;
+  font-family: 'Roboto';
+}
+
+.jobs-failure-desc {
+  font-size: 11px;
+  margin-bottom: 15px;
+  color: #cbd5e1;
+}
+
+@media screen and (max-width: 768px) {
+  .jobs-failure-container {
+    min-height: unset;
+    padding: 20px 0px;
+  }
+  .jobs-failure-heading {
+    font-size: 15px;
+  }
+  .jobs-failure-desc {
+    width: 70%;
+    margin-top: 0px;
+    line-height: 2;
+  }
+}
