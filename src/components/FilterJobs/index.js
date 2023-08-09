@@ -1,8 +1,6 @@
-import {Component} from 'react'
 import {BsSearch} from 'react-icons/bs'
 import Profile from '../Profile'
 import './index.css'
-import JobsSection from '../JobsSection'
 
 const employmentTypesList = [
   {
@@ -42,108 +40,86 @@ const salaryRangesList = [
   },
 ]
 
-class FilterJobs extends Component {
-  render() {
-    const {onChangeSearchInput} = this.props
-    const onChangeEmploymentType = event => {
-      console.log(event.target.value)
-    }
-    let checked = false
-    const isChecked = () => {
-      checked = !checked
-      console.log(checked)
-    }
-    let searchInput = ''
-    const onChangeInput = event => {
-      searchInput = event.target.value
-    }
-
-    const onClickSubmit = () => {
-      onChangeSearchInput(searchInput)
-    }
-    return (
-      <div className="jobs-filter-container">
-        <div className="profile-filters-container">
-          <div className="search-box-mob-con">
-            <input
-              type="text"
-              placeholder="Search"
-              className="search-box"
-              onChange={onChangeInput}
-            />
-            <div className="search-icon-con">
-              <BsSearch className="search-icon" onClick={onClickSubmit} />
-            </div>
-          </div>
-          <Profile />
-          <hr className="line" />
-          <h1 className="filter-jobs-heading">Types of Employment</h1>
-          {employmentTypesList.map(eachItem => (
-            <div
-              key={eachItem.employmentTypeId}
-              className="job-filter-employment-type-con"
-            >
-              <input
-                type="checkbox"
-                id={eachItem.employmentTypeId}
-                className="job-filter-input-checkbox"
-                value={eachItem.employmentTypeId}
-                onChange={onChangeEmploymentType}
-                onClick={isChecked}
-              />
-              <label
-                htmlFor={eachItem.employmentTypeId}
-                className="job-filter-input-label"
-              >
-                {eachItem.label}
-              </label>
-            </div>
-          ))}
-          <hr className="line" />
-          <h1 className="filter-jobs-heading">Salary Range</h1>
-
-          {salaryRangesList.map(eachItem => (
-            <div
-              key={eachItem.employmentTypeId}
-              className="job-filter-employment-type-con"
-            >
-              <input
-                type="radio"
-                id={eachItem.salaryRangeId}
-                className="job-filter-input-checkbox"
-              />
-              <label
-                htmlFor={eachItem.salaryRangeId}
-                className="job-filter-input-label"
-              >
-                {eachItem.label}
-              </label>
-            </div>
-          ))}
-        </div>
-        <div className="jobs-search-box-job-card-con">
-          <div className="search-box-desk-con">
-            <input
-              type="text"
-              placeholder="Search"
-              className="search-box"
-              onChange={onChangeInput}
-            />
-            <div className="search-icon-con">
-              <BsSearch className="search-icon" onClick={onClickSubmit} />
-            </div>
-          </div>
-
-          <div className="job-section-desk-comp-con">
-            <JobsSection />
-          </div>
-        </div>
-        <div className="job-section-mobile-comp-con">
-          <JobsSection />
-        </div>
+const FilterJobs = props => {
+  const {
+    onSelectEmploymentType,
+    onChangeSalaryRange,
+    onKeyEnter,
+    onChangeInput,
+    onClickButton,
+  } = props
+  return (
+    <div className="profile-filters-container">
+      <div className="search-box-mobile-con">
+        <input
+          type="search"
+          placeholder="Search"
+          className="search-box"
+          onChange={onChangeInput}
+          //   value={searchInput}
+          onKeyDown={onKeyEnter}
+        />
+        <button
+          type="button"
+          className="search-icon-con"
+          onClick={onClickButton}
+          data-testid="searchButton"
+        >
+          <BsSearch className="search-icon" />
+        </button>
       </div>
-    )
-  }
+      <Profile />
+      <hr className="line" />
+      <h1 className="filter-jobs-heading">Type of Employment</h1>
+      <ul className="filter-jobs-employment-type-list">
+        {employmentTypesList.map(eachItem => (
+          <li
+            key={eachItem.employmentTypeId}
+            className="job-filter-employment-type-con"
+          >
+            <input
+              type="checkbox"
+              id={eachItem.employmentTypeId}
+              className="job-filter-input-checkbox"
+              value={eachItem.employmentTypeId}
+              onChange={onSelectEmploymentType}
+            />
+            <label
+              htmlFor={eachItem.employmentTypeId}
+              className="job-filter-input-label"
+            >
+              {eachItem.label}
+            </label>
+          </li>
+        ))}
+      </ul>
+      <hr className="line" />
+      <h1 className="filter-jobs-heading">Salary Range</h1>
+      <ul className="filter-jobs-employment-type-list">
+        {salaryRangesList.map(eachItem => (
+          <li
+            key={eachItem.employmentTypeId}
+            className="job-filter-employment-type-con"
+          >
+            <input
+              type="radio"
+              id={eachItem.salaryRangeId}
+              className="job-filter-input-checkbox"
+              name="salary"
+              onChange={onChangeSalaryRange}
+              //   value={salaryRange}
+            />
+            <label
+              htmlFor={eachItem.salaryRangeId}
+              className="job-filter-input-label"
+            >
+              {eachItem.label}
+            </label>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
 }
 
 export default FilterJobs

@@ -8,35 +8,9 @@
   padding-top: 30px;
 }
 
-.jobs-profile-filter-container {
-  width: 100%;
-}
-
-.jobs-card-container {
-  /* width: 100%; */
-  padding: 0px 25px;
-}
-
-.search-box-component-mobile {
-  display: none;
-}
-
 @media screen and (max-width: 768px) {
   .jobs-container {
     flex-direction: column;
     padding: 20px 15px;
-  }
-  .jobs-profile-filter-container {
-    width: 100%;
-  }
-  .jobs-card-container {
-    padding: 10px;
-  }
-  .search-box-component {
-    display: none;
-  }
-  .search-box-component-mobile {
-    display: block;
-    width: 100%;
   }
 }

@@ -47,28 +47,25 @@ class Profile extends Component {
     }
   }
 
-  renderFailure = () => {
-    const {apiStatus} = this.state
-    return (
-      <div className="profile-failure-con">
-        <button
-          type="button"
-          className="profile-failure-button"
-          onClick={this.getProfileData}
-        >
-          Retry
-        </button>
-      </div>
-    )
-  }
+  renderFailure = () => (
+    <div className="profile-failure-con">
+      <button
+        type="button"
+        className="profile-failure-button"
+        onClick={this.getProfileData}
+      >
+        Retry
+      </button>
+    </div>
+  )
 
   renderProfileDetails = () => {
     const {profileData} = this.state
     const {name, profileImageUrl, shortBio} = profileData
     return (
       <div className="profile-container">
-        <img src={profileImageUrl} alt="" className="profile-image" />
-        <p className="profile-name">{name}</p>
+        <img src={profileImageUrl} alt="profile" className="profile-image" />
+        <h1 className="profile-name">{name}</h1>
         <p className="profile-designation">{shortBio}</p>
       </div>
     )

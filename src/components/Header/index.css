@@ -47,6 +47,13 @@
   display: none;
 }
 
+.navbar-mobile-button {
+  background-color: transparent;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+
 @media screen and (max-width: 768px) {
   .navbar-container {
     padding: 0px 15px;
@@ -64,6 +71,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-left: 0px;
+    list-style-type: none;
   }
   .navbar-mobile-icon {
     color: #ffffff;
