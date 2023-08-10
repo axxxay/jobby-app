@@ -1,5 +1,7 @@
 import {BsSearch} from 'react-icons/bs'
 import Profile from '../Profile'
+import EmploymentTypeList from '../EmploymentTypeList'
+import SalaryRangeList from '../SalaryRangeList'
 import './index.css'
 
 const employmentTypesList = [
@@ -56,7 +58,6 @@ const FilterJobs = props => {
           placeholder="Search"
           className="search-box"
           onChange={onChangeInput}
-          //   value={searchInput}
           onKeyDown={onKeyEnter}
         />
         <button
@@ -73,49 +74,22 @@ const FilterJobs = props => {
       <h1 className="filter-jobs-heading">Type of Employment</h1>
       <ul className="filter-jobs-employment-type-list">
         {employmentTypesList.map(eachItem => (
-          <li
+          <EmploymentTypeList
             key={eachItem.employmentTypeId}
-            className="job-filter-employment-type-con"
-          >
-            <input
-              type="checkbox"
-              id={eachItem.employmentTypeId}
-              className="job-filter-input-checkbox"
-              value={eachItem.employmentTypeId}
-              onChange={onSelectEmploymentType}
-            />
-            <label
-              htmlFor={eachItem.employmentTypeId}
-              className="job-filter-input-label"
-            >
-              {eachItem.label}
-            </label>
-          </li>
+            employmentTypeItem={eachItem}
+            onSelectEmploymentType={onSelectEmploymentType}
+          />
         ))}
       </ul>
       <hr className="line" />
       <h1 className="filter-jobs-heading">Salary Range</h1>
       <ul className="filter-jobs-employment-type-list">
         {salaryRangesList.map(eachItem => (
-          <li
-            key={eachItem.employmentTypeId}
-            className="job-filter-employment-type-con"
-          >
-            <input
-              type="radio"
-              id={eachItem.salaryRangeId}
-              className="job-filter-input-checkbox"
-              name="salary"
-              onChange={onChangeSalaryRange}
-              //   value={salaryRange}
-            />
-            <label
-              htmlFor={eachItem.salaryRangeId}
-              className="job-filter-input-label"
-            >
-              {eachItem.label}
-            </label>
-          </li>
+          <SalaryRangeList
+            key={eachItem.salaryRangeId}
+            onChangeSalaryRange={onChangeSalaryRange}
+            salaryRangeItem={eachItem}
+          />
         ))}
       </ul>
     </div>

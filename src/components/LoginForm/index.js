@@ -39,7 +39,7 @@ class LoginForm extends Component {
     const data = await response.json()
     if (response.ok === true) {
       this.onSubmitSuccess(data.jwt_token)
-    } else if (response.status === 400) {
+    } else {
       this.onSubmitFailure(data.error_msg)
     }
   }

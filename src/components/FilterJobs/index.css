@@ -25,23 +25,6 @@
   list-style-type: none;
 }
 
-.job-filter-employment-type-con {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.job-filter-input-checkbox {
-  width: 14px;
-  height: 14px;
-}
-
-.job-filter-input-label {
-  margin: 0px;
-  margin-left: 8px;
-  font-size: 12px;
-}
-
 @media screen and (max-width: 768px) {
   .profile-filters-container {
     width: 100%;

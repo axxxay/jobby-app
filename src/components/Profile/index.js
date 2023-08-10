@@ -42,7 +42,7 @@ class Profile extends Component {
         profileData: updatedData,
         apiStatus: apiStatusConstant.success,
       })
-    } else if (response.status === 401) {
+    } else {
       this.setState({apiStatus: apiStatusConstant.failure})
     }
   }

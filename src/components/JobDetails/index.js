@@ -73,7 +73,7 @@ class JobDetails extends Component {
         jobDetails: updatedData,
         apiStatus: apiStatusConstant.success,
       })
-    } else if (response.status === 401) {
+    } else {
       this.setState({apiStatus: apiStatusConstant.failure})
     }
   }

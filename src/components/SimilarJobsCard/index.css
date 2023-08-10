@@ -27,6 +27,7 @@
   font-weight: 500;
   margin: 0px;
   margin-bottom: 15px;
+  color: #ffffff;
 }
 
 .similar-job-rating-con {
@@ -38,11 +39,13 @@
   font-size: 25px;
   font-weight: 500;
   margin-bottom: 0px;
+  color: #ffffff;
 }
 
 .similar-job-desc {
   font-size: 17px;
   line-height: 1.7;
+  color: #f8fafc;
 }
 
 @media screen and (max-width: 768px) {
