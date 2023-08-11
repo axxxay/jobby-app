@@ -110,7 +110,7 @@ class JobDetails extends Component {
               className="job-details-logo"
             />
             <div className="job-details-title-rating-con">
-              <p className="job-details-title">{title}</p>
+              <h1 className="job-details-title">{title}</h1>
               <div className="job-details-rating-con">
                 <AiFillStar className="job-details-star" />
                 <p className="job-details-rating">{rating}</p>
