@@ -4,7 +4,12 @@ import Cookies from 'js-cookie'
 import './index.css'
 
 class LoginForm extends Component {
-  state = {username: '', password: '', errorMsg: '', showErrorMsg: false}
+  state = {
+    username: 'rahul',
+    password: 'rahul@2021',
+    errorMsg: '',
+    showErrorMsg: false,
+  }
 
   onChangeUsername = event => {
     this.setState({username: event.target.value})
